@@ -1,5 +1,5 @@
 workflow.recipeInfo = []
-const cards = await Promise.all(
+const myCards = await Promise.all(
   workflow.recipes.map(async (recipe) => {
     workflow.recipeInfo.push({
       title: recipe.title,
@@ -39,11 +39,12 @@ const cards = await Promise.all(
     }
   })
 )
-workflow.recipeCards = []
-for (card of cards) {
-  workflow.recipeCards.push({ //in order to render a card, we only need these three fields
+workflow.cards = []
+for (var card of myCards) {
+  workflow.cards.push({
+    //in order to render a card, we only need these three fields
     title: card.title,
     imageUrl: card.imageUrl,
-    actionButton: card.actions[0]
+    actions: card.actions[0]
   })
 }
