@@ -3,7 +3,7 @@ var options = {
   url: 'https://api.spoonacular.com/recipes/complexSearch',
   params: {
     query: workflow.baseQuery,
-    diet: encodeURIComponent(workflow.dietaryRestrictions),
+    diet: encodeURIComponent(workflow.dietType),
     apiKey: env.apiKey,
     number: '3',
     ignorePantry: 'false',
